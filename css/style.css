@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:regular,500&display=swap");
+/* &display=swap */
+:root {
+   --hue-color: 240;
+   --first-color: hsl(var(--hue-color), 53%, 49%);
+   --title-color: hsl(var(--hue-color), 53%, 15%);
+   --text-color: hsl(var(--hue-color), 12%, 35%);
+   --text-color-light: hsl(var(--hue-color), 12%, 65%);
+   --white-color: #fff;
+   --body-color: hsl(var(--hue-color), 24%, 94%);
+
+   --body-font: Poppins;
+   --biggest-font-size: 3rem;
+   --small-font-size: 0.831rem;
+   --smaller-font-size: 0.75rem;
+   --tiny-font-size: 0.625rem;
+
+   --font-medium: 500;
+
+   --mb-0-25: 0.25rem;
+   --mb-1: 1rem;
+   --mb-1-5: 1.5rem;
+   --mb-2-5: 2.5rem;
+
+   --z-normal: 1;
+}
+/* Обнуляющий стиль */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+ol li,
+ul li {
+   list-style: none;
+}
+a,
+a:visited {
+   text-decoration: none;
+}
+a:hover {
+   text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+img {
+   vertical-align: top;
+}
+html,
+body {
+   height: 100%;
+   font-size: 14px;
+   line-height: 1;
+}
+input,
+button,
+textarea {
+   font-family: inherit;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+[class*="__container"] {
+   max-width: 968px;
+   margin: 0 auto;
+}
+/* -------------- */
+body.dark-theme {
+   --title-color: hsl(var(--hue-color), 12%, 95%);
+   --text-color: hsl(var(--hue-color), 12%, 75%);
+   --body-color: hsl(var(--hue-color), 10%, 16%);
+}
+@media (min-width: 968px) {
+   :root {
+      --biggest-font-size: 3.5rem;
+      --small-font-size: 0.875rem;
+      --smaller-font-size: 0.813rem;
+      --tiny-font-size: 0.75rem;
+   }
+}
+.clock__theme {
+   position: absolute;
+   top: -1rem;
+   right: -1rem;
+   display: flex;
+   padding: 0.25rem;
+   border-radius: 50%;
+   box-shadow: inset -1px -1px 1px hsl(var(--hue-color), 0%, 100%, 1),
+      inset 1px 1px 1px hsl(var(--hue-color), 30%, 86%, 1);
+   color: var(--first-color);
+   cursor: pointer;
+}
+.dark-theme .clock__circle {
+   box-shadow: 6px 6px 16px hsla(var(--hue-color), 8%, 12%, 1), -6px -6px 16px hsla(var(--hue-color), 8%, 20%, 1),
+      inset -6px -6px 16px hsl(var(--hue-color), 8%, 20%, 1), inset 6px 6px 12px hsl(var(--hue-color), 8%, 12%, 1);
+}
+.dark-theme .clock__theme {
+   box-shadow: inset -1px -1px 1px hsla(var(--hue-color), 8%, 20%, 1),
+      inset 1px 1px 1px hsla(var(--hue-color), 8%, 12%, 1);
+}
+
+body {
+   font-family: var(--body-font);
+   background-color: var(--body-color);
+   color: var(--text-color);
+   margin: 0;
+}
+/*.clock {
+}*/
+.clock__row {
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   row-gap: 5rem;
+   overflow: hidden;
+}
+.clock__content {
+   display: flex;
+   flex-direction: column;
+   row-gap: 3.5rem;
+}
+.clock__circle {
+   position: relative;
+   width: 200px;
+   height: 200px;
+   box-shadow: -6px -6px 16px var(--white-color), 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+      inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1), inset -6px -6px 16px var(--white-color);
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.clock__twelve,
+.clock__three,
+.clock__six,
+.clock__nine {
+   position: absolute;
+   width: 1rem;
+   height: 1px;
+   background-color: var(--text-color-light);
+}
+.clock__twelve,
+.clock__six {
+   transform: translateX(-50%) rotate(90deg);
+}
+.clock__twelve {
+   top: 1.25rem;
+   left: 50%;
+}
+.clock__three {
+   top: 50%;
+   right: 0.75rem;
+}
+.clock__six {
+   bottom: 1.25rem;
+   left: 50%;
+}
+.clock__nine {
+   top: 50%;
+   left: 0.75rem;
+}
+.clock__rounder {
+   width: 0.75rem;
+   height: 0.75rem;
+   background-color: var(--first-color);
+   border-radius: 50%;
+   border: 2px solid var(--body-color);
+}
+.clock__hour,
+.clock__minutes,
+.clock__secunds {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+}
+.clock__hour {
+   width: 105px;
+   height: 105px;
+}
+.clock__hour::before {
+   content: "";
+   position: absolute;
+   background-color: var(--text-color);
+   width: 0.25rem;
+   height: 3rem;
+   border-radius: 0.75rem;
+   z-index: var(--z-normal);
+}
+.clock__minutes {
+   width: 136px;
+   height: 136px;
+}
+.clock__minutes::before {
+   content: "";
+   position: absolute;
+   background-color: var(--text-color);
+   width: 0.25rem;
+   height: 4rem;
+   border-radius: 0.75rem;
+   z-index: var(--z-normal);
+}
+.clock__secunds {
+   width: 130px;
+   height: 130px;
+}
+.clock__secunds::before {
+   content: "";
+   position: absolute;
+   background-color: var(--first-color);
+   width: 0.125rem;
+   height: 5rem;
+   border-radius: 0.75rem;
+   z-index: var(--z-normal);
+}
+.clock__logo {
+   cursor: pointer;
+   padding: var(--mb-0-25);
+   font-size: var(--small-font-size);
+   font-weight: var(--font-medium);
+   color: var(--text-color-light);
+   transition: 0.3s;
+}
+.clock__logo:hover {
+   color: var(--first-color);
+}
+
+.clock__text {
+   display: flex;
+   justify-content: center;
+   margin-bottom: var(--mb-1);
+}
+.clock__text-hour,
+.clock__text-minutes {
+   font-size: var(--biggest-font-size);
+   font-weight: var(--font-medium);
+   color: var(--title-color);
+}
+.clock__text-ampm {
+   font-size: var(--tiny-font-size);
+   color: var(--title-color);
+   font-weight: var(--font-medium);
+   margin-left: var(--mb-0-25);
+}
+.clock__date {
+   text-align: center;
+   font-size: var(--small-font-size);
+   font-weight: var(--font-medium);
+}

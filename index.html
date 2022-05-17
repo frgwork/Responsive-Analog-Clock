@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="css/style.css">
+   <title>Responsive Analog Clock</title>
+</head>
+
+<body>
+
+   <section class="clock clock__container">
+      <div class="clock__row">
+         <div class="clock__content">
+            <div class="clock__circle">
+               <div class="clock__twelve"></div>
+               <div class="clock__three"></div>
+               <div class="clock__six"></div>
+               <div class="clock__nine"></div>
+
+               <div class="clock__rounder"></div>
+               <div class="clock__hour" id="clock-hour"></div>
+               <div class="clock__minutes" id="clock-minutes"></div>
+               <div class="clock__secunds" id="clock-secunds"></div>
+
+               <div class="clock__theme">
+                  <i class='bx bxs-moon' id="theme-button"></i>
+
+               </div>
+            </div>
+
+            <div>
+               <div class="clock__text">
+                  <div class="clock__text-hour" id="text-hour">00</div>
+                  <div class="clock__text-minutes" id="text-minutes">00</div>
+                  <!--<div class="clock__text-ampm" id="text-ampm">am</div>-->
+               </div>
+
+               <div class="clock__date">
+                  <span id="date-day">01</span>
+                  <span id="date-month">01</span>
+                  <span id="date-yrar">2000</span>
+               </div>
+            </div>
+
+         </div>
+
+         <!--<a href="" class="clock__logo">Clock</a>-->
+      </div>
+   </section>
+
+
+   <script src="js/script.js"></script>
+</body>
+
+</html>
